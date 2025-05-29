@@ -14,7 +14,7 @@
   );
 </script>
 
-<section>
+<main>
     <div class="flex gap-4 mb-4">
         {#each levels as level}
             <Button onclick={() => selectedLevel.set(level)}
@@ -31,4 +31,4 @@
             </li>
         {/each}
     </ul>
-</section>
+</main>

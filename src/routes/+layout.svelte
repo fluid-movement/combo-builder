@@ -1,30 +1,31 @@
 <script lang="ts">
   import '../app.css';
   import {page} from '$app/state';
-  import {setContext} from "svelte";
+  import {Separator} from "$lib/components/ui/separator";
 
   let {children} = $props();
 
   let routes = [
-    {name: 'Home', path: '/'},
+    {name: 'Combo Builder', path: '/'},
     {name: 'The Move Archive', path: '/moves'},
-    {name: 'Combo Builder', path: '/combo-builder'},
   ];
 </script>
 
 <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
-    <nav class="mb-6 p-4 border-b border-stone-400">
-        <ul class="flex gap-4 px-4 justify-between md:justify-start">
+    <nav class="p-4">
+        <ul class="flex gap-4 md:gap-8">
             {#each routes as route}
                 <li>
                     <a href={route.path}
-                       class="text-stone-700 hover:underline"
-                       class:font-bold={page.url.pathname === route.path}>
+                       class="tracking-tight hover:underline"
+                       class:underline={page.url.pathname === route.path}
+                    >
                         {route.name}
                     </a>
                 </li>
             {/each}
         </ul>
     </nav>
+    <Separator class="mb-4"/>
     {@render children()}
 </div>
