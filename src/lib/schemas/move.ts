@@ -1,33 +1,32 @@
-import { z } from 'zod';
+import {z} from 'zod';
 
-// Define the valid values
-const MoveTypeSchema = z.enum(['catch', 'move', 'throw']);
+// Define the valid values with hierarchy
 const MoveLevelSchema = z.enum(['beginner', 'advanced', 'pro']);
+const MoveTypeSchema = z.enum(['catch', 'move', 'modifier']);
 
 // Schema for raw JSON data
-export const MoveDataSchema = z.object({
+export const MoveSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
-  type: z.string(), // Will be parsed as comma-separated
+  alternateNames: z.array(z.string()).optional(),
+  type: z.array(MoveTypeSchema),
   level: MoveLevelSchema,
-  description: z.string(),
-  video: z.string().url(),
+  description: z.string().optional(),
+  video: z.string().url().optional(),
 });
 
-// Infer types from schemas
+// Infer types from schemas - single source of truth
 export type MoveLevel = z.infer<typeof MoveLevelSchema>;
 export type MoveType = z.infer<typeof MoveTypeSchema>;
-export type MoveData = z.infer<typeof MoveDataSchema>;
+export type Move = z.infer<typeof MoveSchema>;
 
-// Export the enums for use in components
 export const MOVE_LEVELS = MoveLevelSchema.options;
 export const MOVE_TYPES = MoveTypeSchema.options;
 
-// Validation functions
-export function parseMoveData(data: unknown): MoveData {
-  return MoveDataSchema.parse(data);
+export function parseMove(data: unknown): Move {
+  return MoveSchema.parse(data);
 }
 
-export function parseMovesArray(data: unknown): MoveData[] {
-  return z.array(MoveDataSchema).parse(data);
+export function parseMovesArray(data: unknown): Move[] {
+  return z.array(MoveSchema).parse(data);
 }

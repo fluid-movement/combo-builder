@@ -1,23 +1,23 @@
 <script lang="ts">
-  import {MovePicker} from "$lib/components/move-picker.svelte";
+  import {MovePicker} from "$lib/utils/move-picker.svelte";
   import {Button} from "$lib/components/ui/button";
-  import {Move} from "$lib/models/move";
   import {selectedLevel} from '$lib/stores/levelStore';
   import {fade} from "svelte/transition";
+  import type {Move} from "$lib/schemas/move";
+  import {getMovesForLevel, getUniqueLevels} from "$lib/utils/moveUtils";
+  import MoveCard from "$lib/components/MoveCard.svelte";
+  import {RotateCcw} from "@lucide/svelte";
+  import {Plus} from "@lucide/svelte";
 
   let {data} = $props();
-
-  let moves: Move[] = Move.fromJsonArray(data.moves);
-
-  let levels = new Set(moves.map(move => move.level));
-
-  let filteredMoves = $derived(Move.getMovesForLevel(moves, $selectedLevel));
-
+  let moves: Move[] = data.moves;
+  let levels = getUniqueLevels(moves);
+  let filteredMoves = $derived(getMovesForLevel(moves, $selectedLevel));
   let picker = $derived(new MovePicker(filteredMoves));
 </script>
 
 <section class="flex flex-col gap-4">
-    <h1>Combo Builder</h1>
+    <h2 class="font-bold text-2xl">Select your level</h2>
     <div class="flex gap-4">
         {#each levels as level}
             <Button onclick={() => selectedLevel.set(level)}
@@ -26,16 +26,38 @@
             </Button>
         {/each}
     </div>
-    <p class="hidden">Moves: <span>{filteredMoves.map((move) => move.name)}</span></p>
-    <h2>Lets go:</h2>
-    <div class="flex gap-4">
-        <Button onclick={() => picker.random()}>Add Move</Button>
-        <Button onclick={() => picker.reset()} disabled={picker.isFresh()}>Reset</Button>
+    <p class="text-stone-600">Moves: <span>{filteredMoves.map((move) => " " + move.name)}</span></p>
+    <h2 class="font-bold text-2xl">Lets go!</h2>
+    <div class="flex gap-4 justify-between md:justify-start">
+        <Button onclick={() => picker.pickFirstCatch()}
+                disabled={!picker.isFresh()}
+                variant={picker.isFresh() && picker.hasAvailable('catch') ? 'default' : 'ghost'}
+        >
+            <Plus/>
+            Catch
+        </Button>
+        <Button onclick={() => picker.pickNextMove('move')}
+                disabled={picker.isFresh() || !picker.hasAvailable('move')}
+                variant={!picker.isFresh() && picker.hasAvailable('move') ? 'default' : 'ghost'}
+        >
+            <Plus/>
+            Move
+        </Button>
+        <Button onclick={() => picker.pickNextMove('modifier')}
+                disabled={picker.isFresh() || !picker.hasAvailable('modifier')}
+                variant={!picker.isFresh() && picker.hasAvailable('modifier') ? 'default' : 'ghost'}
+        >
+            <Plus/>
+            Modifier
+        </Button>
+        <Button onclick={() => picker.reset()} disabled={picker.isFresh()}>
+            <RotateCcw/>
+        </Button>
     </div>
     <div class="flex flex-col gap-2">
-        {#each picker.list as move}
-            <div transition:fade={{ duration: 100}} class="p-4 border border-stone-300 rounded-lg hover:bg-stone-100">
-                {move.name}
+        {#each picker.list as pickedMove}
+            <div transition:fade={{ duration: 100}}>
+                <MoveCard {pickedMove}/>
             </div>
         {/each}
     </div>

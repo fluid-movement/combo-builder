@@ -1,11 +1,11 @@
 <script lang="ts">
   import {Button} from "$lib/components/ui/button";
-  import {Move} from "$lib/models/move";
+  import type {Move} from "$lib/schemas/move";
   import {selectedLevel} from '$lib/stores/levelStore';
   import {fade} from "svelte/transition";
 
   let {data} = $props();
-  let moves: Move[] = Move.fromJsonArray(data.moves);
+  let moves: Move[] = data.moves;
 
   let levels = new Set(moves.map(move => move.level));
 

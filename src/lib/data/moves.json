@@ -1,66 +1,269 @@
 [
   {
-    "id": "utl",
+    "id": "under_the_leg",
     "name": "Under the leg",
-    "type": "catch,move",
+    "type": [
+      "catch",
+      "move"
+    ],
     "level": "beginner",
-    "description": "The disc passes under the leg from the front. Right hand under right leg, left hand under left leg.",
-    "video": "https://www.youtube.com/watch?v=1b2g0d3k4e8"
+    "description": "Catch or take the disc under the same leg as your hand, with the disc coming from the front",
+    "alternateNames": [
+      "UTL"
+    ]
   },
   {
-    "id": "btb",
-    "name": "Behind the back",
-    "type": "catch,move",
-    "level": "beginner",
-    "description": "",
-    "video": "https://www.youtube.com/watch?v=2c3d4e5f6g7"
+    "id": "turnover",
+    "name": "Turnover",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": "Turn the disc over"
+  },
+  {
+    "id": "upside_down",
+    "name": "Upside Down",
+    "type": [
+      "modifier"
+    ],
+    "level": "advanced",
+    "description": "Do the combo with the disc upside down",
+    "alternateNames": [
+      "UD"
+    ]
   },
   {
     "id": "chair",
     "name": "Chair",
-    "type": "catch,move",
+    "type": [
+      "catch",
+      "move"
+    ],
     "level": "beginner",
-    "description": "Crouch down as if sitting on a chair, catch the disc under your legs.",
-    "video": "https://www.youtube.com/watch?v=3h4i5j6k7l8"
+    "description": "Squat as if sitting on a chair. Catch or take the disc under your legs."
   },
   {
-    "id": "flamingo",
-    "name": "Flamingo",
-    "type": "catch,move",
-    "level": "beginner",
-    "description": "Stand on one leg, catch the disc with the same hand as the standing leg.",
-    "video": "https://www.youtube.com/watch?v=4i5j6k7l8m9"
+    "id": "juice",
+    "name": "Juice",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": "Against the spin pull"
   },
   {
-    "id": "bth",
-    "name": "Behind the head",
-    "type": "catch,move",
+    "id": "crank_in",
+    "name": "Crank in",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "crank_out",
+    "name": "Crank out",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "triple_fake",
+    "name": "triple fake",
+    "type": [
+      "move",
+      "catch"
+    ],
     "level": "beginner",
-    "description": "Reach behind your head with one hand, to catch or take the disc.",
-    "video": "https://www.youtube.com/watch?v=5j6k7l8m9n0"
+    "description": ""
+  },
+  {
+    "id": "phlaud",
+    "name": "Phlaud",
+    "type": [
+      "move",
+      "catch"
+    ],
+    "level": "beginner",
+    "description": ""
+  },
+  {
+    "id": "scarecrow",
+    "name": "Scarecrow",
+    "type": [
+      "catch",
+      "move"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "brush",
+    "name": "Brush",
+    "type": [
+      "move"
+    ],
+    "level": "beginner",
+    "description": ""
+  },
+  {
+    "id": "spinning",
+    "name": "Spinning",
+    "type": [
+      "modifier"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "double_spinning",
+    "name": "Double Spinning",
+    "type": [
+      "modifier"
+    ],
+    "level": "pro",
+    "description": ""
   },
   {
     "id": "gitis",
     "name": "Gitis",
-    "type": "catch,move",
+    "type": [
+      "catch",
+      "move"
+    ],
     "level": "advanced",
-    "description": "Extend your hand across your body and raise the opposing leg. Catch or take the disc under the leg.",
-    "video": "https://www.youtube.com/watch?v=6k7l8m9n0o1"
+    "description": ""
   },
   {
     "id": "barrel",
     "name": "Barrel",
-    "type": "catch,move",
+    "type": [
+      "catch"
+    ],
     "level": "pro",
-    "description": "Jump while spinning, catch the disc while still in the air.",
-    "video": "https://www.youtube.com/watch?v=7l8m9n0o1p2"
+    "description": ""
+  },
+  {
+    "id": "barrel_gitis",
+    "name": "Barrel Gitis",
+    "type": [
+      "catch"
+    ],
+    "level": "pro",
+    "description": ""
+  },
+  {
+    "id": "lacer",
+    "name": "Lacer",
+    "type": [
+      "catch",
+      "move"
+    ],
+    "level": "beginner",
+    "description": "",
+    "alternateNames": [
+      "Bird"
+    ]
+  },
+  {
+    "id": "roll",
+    "name": "Roll",
+    "type": [
+      "move",
+      "catch"
+    ],
+    "level": "beginner",
+    "description": ""
+  },
+  {
+    "id": "backroll",
+    "name": "Backroll",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "skid",
+    "name": "Skid",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "serpent_charmer",
+    "name": "Serpent Charmer",
+    "type": [
+      "move"
+    ],
+    "level": "pro",
+    "description": ""
+  },
+  {
+    "id": "flamingo",
+    "name": "Flamingo",
+    "type": [
+      "catch",
+      "move"
+    ],
+    "level": "beginner",
+    "description": ""
   },
   {
     "id": "flamingitis",
     "name": "Flamingitis",
-    "type": "catch,move",
+    "type": [
+      "catch",
+      "move"
+    ],
     "level": "advanced",
-    "description": "Do stuff",
-    "video": "https://www.youtube.com/watch?v=8m9n0o1p2q3"
+    "description": ""
+  },
+  {
+    "id": "osis",
+    "name": "Osis",
+    "type": [
+      "modifier"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "bad_attitude",
+    "name": "Bad Attitude",
+    "type": [
+      "catch",
+      "move"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "5050_roll",
+    "name": "50-50 Roll",
+    "type": [
+      "catch"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "figure_four",
+    "name": "Figure Four",
+    "type": [
+      "catch",
+      "move"
+    ],
+    "level": "beginner",
+    "description": "",
+    "alternateNames": [
+      "Grapevine"
+    ]
   }
 ]
