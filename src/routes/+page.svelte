@@ -2,42 +2,22 @@
   import {MovePicker} from "$lib/utils/move-picker.svelte.js";
   import {Button} from "$lib/components/ui/button";
   import {selectedLevel} from '$lib/stores/levelStore';
-  import {fade} from "svelte/transition";
+  import {slide} from "svelte/transition";
   import type {Move} from "$lib/schemas/move";
   import {getMovesForLevel, getUniqueLevels} from "$lib/utils/moveUtils";
   import MoveCard from "$lib/components/MoveCard.svelte";
   import {RotateCcw} from "@lucide/svelte";
   import {Plus} from "@lucide/svelte";
-  import * as Popover from "$lib/components/ui/popover";
+  import LevelSelector from "$lib/components/LevelSelector.svelte";
 
   let {data} = $props();
   let moves: Move[] = data.moves;
-  let levels = getUniqueLevels(moves);
   let filteredMoves = $derived(getMovesForLevel(moves, $selectedLevel));
   let picker = $derived(new MovePicker(filteredMoves));
 </script>
 
 <main class="flex flex-col gap-8">
-    <section class="flex flex-col gap-4">
-        <h2 class="font-bold text-2xl">Select your level</h2>
-        <div class="flex flex-wrap gap-4">
-            {#each levels as level}
-                <Button onclick={() => selectedLevel.set(level)}
-                        variant={$selectedLevel === level ? 'default' : 'outline'}>
-                    {level}
-                </Button>
-            {/each}
-            <Popover.Root>
-                <Popover.Trigger>
-                    <Button variant="outline">Show moves</Button>
-                </Popover.Trigger>
-                <Popover.Content>
-                    <p>{filteredMoves.map((move) => " " + move.name)}</p>
-                </Popover.Content>
-            </Popover.Root>
-        </div>
-    </section>
-
+    <LevelSelector {moves}/>
     <section class="flex flex-col gap-4">
         <div class="flex justify-between items-center">
             <h2 class="font-bold text-2xl">
@@ -69,7 +49,7 @@
         </div>
         <div class="flex flex-col gap-2">
             {#each picker.list as pickedMove}
-                <div transition:fade={{ duration: 100}}>
+                <div transition:slide={{ duration: 100}}>
                     <MoveCard {pickedMove}/>
                 </div>
             {/each}

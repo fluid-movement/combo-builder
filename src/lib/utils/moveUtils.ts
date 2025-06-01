@@ -22,28 +22,9 @@ export function getMovesForLevel<T extends { level: MoveLevel }>(
   });
 }
 
-export function getMovesWithType<T extends { type: MoveType[] }>(
-  allMoves: T[],
-  targetType: MoveType
-): T[] {
-  return allMoves.filter(move => hasType(move, targetType));
-}
-
 // Type checking functions
 export function hasType(move: { type: MoveType[] }, type: MoveType): boolean {
   return move.type.includes(type);
-}
-
-// Data normalization functions
-export function normalizeMove(data: Move): Required<Move> {
-  return {
-    ...data,
-    alternateNames: data.alternateNames || []
-  };
-}
-
-export function normalizeMoves(data: Move[]): Required<Move>[] {
-  return data.map(normalizeMove);
 }
 
 // Extraction utilities
@@ -60,7 +41,7 @@ export function searchMoves(moves: Move[], searchTerm: string): Move[] {
   const term = searchTerm.toLowerCase();
   return moves.filter(move =>
     move.name.toLowerCase().includes(term) ||
-    move.description.toLowerCase().includes(term) ||
+    move.description?.toLowerCase().includes(term) ||
     (move.alternateNames && move.alternateNames.some(alt =>
       alt.toLowerCase().includes(term)
     ))

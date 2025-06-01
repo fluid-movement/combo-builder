@@ -1,19 +1,39 @@
 <script lang="ts">
   import type {PickedMove} from "$lib/utils/move-picker.svelte";
+  import {ChevronUp, ChevronDown} from "@lucide/svelte";
+  import {slide} from "svelte/transition";
+  import MoveDetails from "$lib/components/MoveDetails.svelte";
 
-  export let pickedMove: PickedMove;
+  let {pickedMove}: {pickedMove: PickedMove} = $props();
+
+  let styleClass = $derived(
+    pickedMove.asType === 'catch'
+      ? 'font-bold'
+      : pickedMove.asType === 'move'
+        ? 'italic text-blue-700'
+        : pickedMove.asType === 'modifier'
+          ? 'underline text-yellow-700'
+          : ''
+  );
+
+  let expanded = $state(false);
 </script>
 
-{#if pickedMove.asType === 'catch'}
-    <div class="p-4 border border-green-500 bg-green-50 rounded-lg">
-        <span class="font-bold text-green-700">{pickedMove.move.name} <small>(Catch)</small></span>
+
+<div class="p-4 border border-primary bg-background rounded-lg ">
+    <div class="{styleClass} flex justify-between gap-4">
+        <div class="grow">{pickedMove.move.name}</div>
+        <small>({pickedMove.asType})</small>
+        {#if expanded}
+            <ChevronUp class="text-primary cursor-pointer" onclick={() => expanded = !expanded}/>
+
+        {:else}
+            <ChevronDown class="text-primary cursor-pointer" onclick={() => expanded = !expanded}/>
+        {/if}
     </div>
-{:else if pickedMove.asType === 'move'}
-    <div class="p-4 border border-blue-500 bg-blue-50 rounded-lg">
-        <span class="italic text-blue-700">{pickedMove.move.name} <small>(Move)</small></span>
-    </div>
-{:else if pickedMove.asType === 'modifier'}
-    <div class="p-4 border border-yellow-500 bg-yellow-50 rounded-lg">
-        <span class="underline text-yellow-700">{pickedMove.move.name} <small>(Modifier)</small></span>
-    </div>
-{/if}
+    {#key expanded}
+        <div class={[expanded ? 'block' : 'hidden']} transition:slide>
+            <MoveDetails move={pickedMove.move}/>
+        </div>
+    {/key}
+</div>

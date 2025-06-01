@@ -10,7 +10,8 @@
     "description": "Catch or take the disc under the same leg as your hand, with the disc coming from the front",
     "alternateNames": [
       "UTL"
-    ]
+    ],
+    "video": "https://www.youtube.com/embed/8tgEAfZMPfg"
   },
   {
     "id": "turnover",
@@ -98,7 +99,8 @@
       "move"
     ],
     "level": "advanced",
-    "description": ""
+    "description": "",
+    "video": "https://www.youtube.com/embed/5UzjRJcEGyQ"
   },
   {
     "id": "brush",
@@ -107,7 +109,8 @@
       "move"
     ],
     "level": "beginner",
-    "description": ""
+    "description": "",
+    "video": "https://www.youtube.com/embed/RxXSCqGofvg"
   },
   {
     "id": "spinning",
@@ -116,7 +119,8 @@
       "modifier"
     ],
     "level": "advanced",
-    "description": ""
+    "description": "Spin around",
+    "video": "https://www.youtube.com/embed/dphSV2f3b-0"
   },
   {
     "id": "double_spinning",
@@ -135,7 +139,8 @@
       "move"
     ],
     "level": "advanced",
-    "description": ""
+    "description": "",
+    "video": "https://www.youtube.com/embed/0t9UoRti3Ec"
   },
   {
     "id": "barrel",
@@ -166,7 +171,8 @@
     "description": "",
     "alternateNames": [
       "Bird"
-    ]
+    ],
+    "video": "https://www.youtube.com/embed/OP5F5hJw16w"
   },
   {
     "id": "roll",
@@ -185,7 +191,8 @@
       "move"
     ],
     "level": "advanced",
-    "description": ""
+    "description": "",
+    "video": "https://www.youtube.com/embed/A3FVjq45W74"
   },
   {
     "id": "skid",
@@ -265,5 +272,29 @@
     "alternateNames": [
       "Grapevine"
     ]
+  },
+  {
+    "id": "behind_the_back",
+    "name": "Behind the Back",
+    "type": [
+      "catch",
+      "move"
+    ],
+    "level": "beginner",
+    "description": "Reach behind your back and catch or take the disc on the opposite side of your body.",
+    "alternateNames": [
+      "BTB"
+    ],
+    "video": "https://www.youtube.com/embed/Co3xwv0Q0RA"
+  },
+  {
+    "id": "cuff",
+    "name": "Cuff",
+    "type": [
+      "move"
+    ],
+    "level": "beginner",
+    "description": "Touch the disc in the air, to alter its angle.",
+    "video": "https://www.youtube.com/embed/vM2WsGScvQ4"
   }
 ]
