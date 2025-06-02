@@ -18,11 +18,11 @@
   let open = $state(false);
 </script>
 
-<div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
+<div class="max-w-5xl px-4 mx-auto mb-16 sm:px-6 lg:px-8">
     <div class="flex justify-between py-4">
         <h1 class="text-3xl font-bold tracking-tight">{pageTitle}</h1>
         <Sheet.Root bind:open>
-            <Sheet.Trigger class={buttonVariants({ variant: "outline" })}>
+            <Sheet.Trigger>
                 <Menu/>
             </Sheet.Trigger>
             <Sheet.Content side="left" class="backdrop-blur-sm">

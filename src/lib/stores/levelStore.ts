@@ -19,8 +19,13 @@ function createLevelStore() {
       : defaultLevel;
   }
 
-  const initialValue = getValidatedStoredLevel();
-  const { subscribe, set, update } = writable<MoveLevel>(initialValue);
+  // Start with undefined to avoid flashing default before correct value loads
+  const { subscribe, set, update } = writable<MoveLevel | undefined>(undefined);
+
+  if (browser) {
+    // Set the correct value on the client after hydration
+    set(getValidatedStoredLevel());
+  }
 
   return {
     subscribe,
@@ -33,7 +38,7 @@ function createLevelStore() {
     },
     update: (updater: (value: MoveLevel) => MoveLevel) => {
       update((currentValue) => {
-        const newValue = updater(currentValue);
+        const newValue = updater(currentValue as MoveLevel);
         if (browser) {
           localStorage.setItem('selectedLevel', newValue);
         }

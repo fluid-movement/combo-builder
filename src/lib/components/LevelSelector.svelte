@@ -1,21 +1,63 @@
 <script lang="ts">
   import {selectedLevel} from "$lib/stores/levelStore";
   import {Button} from "$lib/components/ui/button";
+  import {MOVE_LEVELS} from '$lib/schemas/move';
+  import {ucFirst} from "$lib/utils";
+  import {slide, fade} from "svelte/transition";
+  import {Settings} from "@lucide/svelte";
+  import * as Popover from "$lib/components/ui/popover";
   import type {Move} from "$lib/schemas/move";
-  import {getUniqueLevels} from "$lib/utils/moveUtils";
 
-  let { moves }: {moves: Move[]} = $props();
-  let levels = getUniqueLevels(moves);
+  let {moves}: { moves: Move[] } = $props();
+
+  let sortedMoves = $derived(moves.sort((a, b) => {
+    const levelDiff = MOVE_LEVELS.indexOf(b.level) - MOVE_LEVELS.indexOf(a.level);
+    if (levelDiff !== 0) return levelDiff;
+    return a.name.localeCompare(b.name);
+  }));
+
+  let open = $state(false);
 </script>
 
 <section class="flex flex-col gap-4">
-    <h2 class="font-bold text-2xl">Select your level</h2>
-    <div class="flex flex-wrap gap-4">
-        {#each levels as level}
-            <Button onclick={() => selectedLevel.set(level)}
-                    variant={$selectedLevel === level ? 'default' : 'ghost'}>
-                {level}
-            </Button>
-        {/each}
+    <div class="flex gap-2 justify-between items-center">
+        <h2 class="grow font-bold text-xl">
+            {open
+              ? "Select your level"
+              : `Level: ${ucFirst($selectedLevel ?? '')}`}
+        </h2>
+        {#if !open}
+            <div transition:fade={{ duration: 50}}>
+                <Popover.Root>
+                    <Popover.Trigger>
+                        <Button>Moves</Button>
+                    </Popover.Trigger>
+                    <Popover.Content class="border-primary bg-transparent backdrop-blur-lg">
+                        <ul>
+                            {#each sortedMoves as move}
+                                <li>{move.name} ({move.level})</li>
+                            {/each}
+                        </ul>
+                    </Popover.Content>
+                </Popover.Root>
+            </div>
+        {/if}
+        <Button onclick={() => open = !open}>
+            <Settings/>
+        </Button>
     </div>
+    {#if open}
+        <div transition:slide={{ duration: 100}}>
+            {#if $selectedLevel}
+                <div class="flex flex-wrap gap-2">
+                    {#each MOVE_LEVELS as level}
+                        <Button onclick={() => {selectedLevel.set(level); open = false;}}
+                                variant={$selectedLevel === level ? 'default' : 'ghost'}>
+                            {ucFirst(level)}
+                        </Button>
+                    {/each}
+                </div>
+            {/if}
+        </div>
+    {/if}
 </section>

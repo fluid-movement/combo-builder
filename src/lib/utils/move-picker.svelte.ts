@@ -1,4 +1,4 @@
-import type { Move, MoveType } from "$lib/schemas/move";
+import type {Move, MoveType} from "$lib/schemas/move";
 
 export type PickedMove = {
   move: Move;
@@ -18,14 +18,14 @@ export class MovePicker {
     return this.#choices.filter(move => !selectedIds.has(move.id));
   }
 
-  pickFirstCatch(): void {
+  pickCatch(): void {
     if (this.list.length > 0) return;
-    // Only moves that can be a catch
+
     const catches = this.available.filter(move => move.type.includes("catch"));
     if (catches.length === 0) return;
     const idx = Math.floor(Math.random() * catches.length);
     const move = catches[idx];
-    this.list.push({ move, asType: "catch" });
+    this.list.push({move, asType: "catch"});
   }
 
   pickNextMove(type: MoveType): void {
@@ -34,7 +34,7 @@ export class MovePicker {
     if (candidates.length === 0) return;
     const idx = Math.floor(Math.random() * candidates.length);
     const move = candidates[idx];
-    this.list.push({ move, asType: type });
+    this.list.push({move, asType: type});
   }
 
   isFresh(): boolean {

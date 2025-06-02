@@ -1,7 +1,6 @@
 import {z} from 'zod';
 
-// Define the valid values with hierarchy
-const MoveLevelSchema = z.enum(['beginner', 'advanced', 'pro']);
+const MoveLevelSchema = z.enum(['beginner', 'advanced', 'pro', 'specialist']);
 const MoveTypeSchema = z.enum(['catch', 'move', 'modifier']);
 
 // Schema for raw JSON data

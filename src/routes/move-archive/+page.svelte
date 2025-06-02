@@ -1,21 +1,33 @@
 <script lang="ts">
   import type {Move} from "$lib/schemas/move";
   import {selectedLevel} from '$lib/stores/levelStore';
-  import {fade} from "svelte/transition";
-  import LevelSelector from "$lib/components/LevelSelector.svelte";
   import * as Accordion from "$lib/components/ui/accordion";
+  import {Button} from "$lib/components/ui/button";
   import MoveDetails from "$lib/components/MoveDetails.svelte";
+  import {MOVE_LEVELS} from '$lib/schemas/move';
+  import {ucFirst} from "$lib/utils";
 
   let {data} = $props();
   let moves: Move[] = data.moves;
 
   let filteredMoves = $derived(
-    moves.filter(move => move.level === $selectedLevel)
+    moves.filter(move => move.level === $selectedLevel).sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    })
   );
 </script>
 
 <main>
-    <LevelSelector {moves}/>
+    {#if $selectedLevel}
+        <div class="flex flex-wrap gap-2">
+            {#each MOVE_LEVELS as level}
+                <Button onclick={() => selectedLevel.set(level)}
+                        variant={$selectedLevel === level ? 'default' : 'ghost'}>
+                    {ucFirst(level)}
+                </Button>
+            {/each}
+        </div>
+    {/if}
     <ul class="mt-8 flex flex-col gap-4">
         <Accordion.Root type="single" class="w-full sm:max-w-[70%]">
             {#each filteredMoves as move}

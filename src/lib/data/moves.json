@@ -209,7 +209,7 @@
     "type": [
       "move"
     ],
-    "level": "pro",
+    "level": "specialist",
     "description": ""
   },
   {
@@ -296,5 +296,87 @@
     "level": "beginner",
     "description": "Touch the disc in the air, to alter its angle.",
     "video": "https://www.youtube.com/embed/vM2WsGScvQ4"
+  },
+  {
+    "id": "eagle_spotter",
+    "name": "Eagle Spotter",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "kerfuffle",
+    "name": "Kerfuffle",
+    "type": [
+      "catch"
+    ],
+    "level": "beginner",
+    "description": ""
+  },
+  {
+    "id": "double_trouble",
+    "name": "Double Trouble",
+    "type": [
+      "move"
+    ],
+    "level": "specialist",
+    "description": ""
+  },
+  {
+    "id": "wipers",
+    "name": "Wipers",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "kick",
+    "name": "Kick",
+    "type": [
+      "move"
+    ],
+    "level": "beginner",
+    "description": ""
+  },
+  {
+    "id": "olivia",
+    "name": "Olivia",
+    "type": [
+      "catch"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "oliver",
+    "name": "Oliver",
+    "type": [
+      "catch"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "amphibian",
+    "name": "Amphibian",
+    "type": [
+      "move"
+    ],
+    "level": "specialist",
+    "description": ""
+  },
+  {
+    "id": "twirl",
+    "name": "Twirl",
+    "type": [
+      "move",
+      "catch"
+    ],
+    "level": "beginner",
+    "description": ""
   }
 ]
