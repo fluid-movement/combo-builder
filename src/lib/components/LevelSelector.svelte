@@ -32,7 +32,7 @@
                     <Popover.Trigger>
                         <Button>Moves</Button>
                     </Popover.Trigger>
-                    <Popover.Content class="border-primary bg-transparent backdrop-blur-lg">
+                    <Popover.Content class="max-h-[75vh] overflow-y-auto border-primary bg-transparent backdrop-blur-lg">
                         <ul>
                             {#each sortedMoves as move}
                                 <li>{move.name} ({move.level})</li>
