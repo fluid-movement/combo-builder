@@ -11,7 +11,7 @@
     "alternateNames": [
       "UTL"
     ],
-    "video": "https://www.youtube.com/embed/8tgEAfZMPfg"
+    "videoId": "8tgEAfZMPfg"
   },
   {
     "id": "turnover",
@@ -100,7 +100,7 @@
     ],
     "level": "advanced",
     "description": "",
-    "video": "https://www.youtube.com/embed/5UzjRJcEGyQ"
+    "videoId": "5UzjRJcEGyQ"
   },
   {
     "id": "brush",
@@ -110,7 +110,7 @@
     ],
     "level": "beginner",
     "description": "",
-    "video": "https://www.youtube.com/embed/RxXSCqGofvg"
+    "videoId": "RxXSCqGofvg"
   },
   {
     "id": "spinning",
@@ -120,7 +120,7 @@
     ],
     "level": "advanced",
     "description": "Spin around",
-    "video": "https://www.youtube.com/embed/dphSV2f3b-0"
+    "videoId": "dphSV2f3b-0"
   },
   {
     "id": "double_spinning",
@@ -140,7 +140,7 @@
     ],
     "level": "advanced",
     "description": "",
-    "video": "https://www.youtube.com/embed/0t9UoRti3Ec"
+    "videoId": "0t9UoRti3Ec"
   },
   {
     "id": "barrel",
@@ -172,7 +172,7 @@
     "alternateNames": [
       "Bird"
     ],
-    "video": "https://www.youtube.com/embed/OP5F5hJw16w"
+    "videoId": "OP5F5hJw16w"
   },
   {
     "id": "roll",
@@ -192,7 +192,7 @@
     ],
     "level": "advanced",
     "description": "",
-    "video": "https://www.youtube.com/embed/A3FVjq45W74"
+    "videoId": "A3FVjq45W74"
   },
   {
     "id": "skid",
@@ -285,7 +285,7 @@
     "alternateNames": [
       "BTB"
     ],
-    "video": "https://www.youtube.com/embed/Co3xwv0Q0RA"
+    "videoId": "Co3xwv0Q0RA"
   },
   {
     "id": "cuff",
@@ -295,7 +295,7 @@
     ],
     "level": "beginner",
     "description": "Touch the disc in the air, to alter its angle.",
-    "video": "https://www.youtube.com/embed/vM2WsGScvQ4"
+    "videoId": "vM2WsGScvQ4"
   },
   {
     "id": "eagle_spotter",

@@ -11,7 +11,7 @@ export const MoveSchema = z.object({
   type: z.array(MoveTypeSchema),
   level: MoveLevelSchema,
   description: z.string().optional(),
-  video: z.string().url().optional(),
+  videoId: z.string().optional(),
 });
 
 // Infer types from schemas - single source of truth

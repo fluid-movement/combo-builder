@@ -17,12 +17,18 @@
   );
 </script>
 
+<svelte:head>
+    <title>Move Archive</title>
+    <meta name="description" content="A page documenting all the moves used in the combo builder, filtered by move level." />
+</svelte:head>
+
 <main>
     {#if $selectedLevel}
         <div class="flex flex-wrap gap-2">
             {#each MOVE_LEVELS as level}
                 <Button onclick={() => selectedLevel.set(level)}
-                        variant={$selectedLevel === level ? 'default' : 'ghost'}>
+                        variant={$selectedLevel === level ? 'default' : 'ghost'}
+                        aria-label="Select Move Level">
                     {ucFirst(level)}
                 </Button>
             {/each}
@@ -32,7 +38,7 @@
         <Accordion.Root type="single" class="w-full sm:max-w-[70%]">
             {#each filteredMoves as move}
                 <Accordion.Item value={move.id}>
-                    <Accordion.Trigger>{move.name}</Accordion.Trigger>
+                    <Accordion.Trigger class="font-bold">{move.name}</Accordion.Trigger>
                     <Accordion.Content>
                         <MoveDetails {move}/>
                     </Accordion.Content>

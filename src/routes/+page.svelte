@@ -16,34 +16,41 @@
   let picker = $derived(new MovePicker(filteredMoves));
 </script>
 
+<svelte:head>
+    <title>Combo Builder</title>
+    <meta name="description" content="A combo building game for Freestyle Frisbee." />
+</svelte:head>
+
 <main class="flex flex-col gap-8">
     <LevelSelector moves={filteredMoves}/>
     <section class="flex flex-col gap-4">
         <div class="flex justify-between items-center">
-            <h2 class="font-bold text-xl">
-
+            <h2 class="font-bold">
                 {#if picker.isFresh()}Add a catch{:else}Add a move or modifier{/if}
             </h2>
-            <Button onclick={() => picker.reset()} disabled={picker.isFresh()}>
+            <Button onclick={() => picker.reset()} disabled={picker.isFresh()} aria-label="Reset Picker">
                 <RotateCcw/>
             </Button>
         </div>
         <div class="flex flex-wrap gap-4">
             <Button onclick={() => picker.pickCatch()}
                     disabled={!picker.isFresh()}
-                    variant={picker.isFresh() && picker.hasAvailable('catch') ? 'default' : 'ghost'}>
+                    variant={picker.isFresh() && picker.hasAvailable('catch') ? 'default' : 'ghost'}
+                    aria-label="Pick Catch">
                 <Plus/>
                 Catch
             </Button>
             <Button onclick={() => picker.pickNextMove('move')}
                     disabled={picker.isFresh() || !picker.hasAvailable('move')}
-                    variant={!picker.isFresh() && picker.hasAvailable('move') ? 'default' : 'ghost'}>
+                    variant={!picker.isFresh() && picker.hasAvailable('move') ? 'default' : 'ghost'}
+                    aria-label="Pick Move">
                 <Plus/>
                 Move
             </Button>
             <Button onclick={() => picker.pickNextMove('modifier')}
                     disabled={picker.isFresh() || !picker.hasAvailable('modifier')}
-                    variant={!picker.isFresh() && picker.hasAvailable('modifier') ? 'default' : 'ghost'}>
+                    variant={!picker.isFresh() && picker.hasAvailable('modifier') ? 'default' : 'ghost'}
+                    aria-label="Pick Modifier">
                 <Plus/>
                 Modifier
             </Button>

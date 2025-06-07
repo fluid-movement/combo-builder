@@ -7,6 +7,7 @@
   import {Settings} from "@lucide/svelte";
   import * as Popover from "$lib/components/ui/popover";
   import type {Move} from "$lib/schemas/move";
+  import {buttonVariants} from "$lib/components/ui/button";
 
   let {moves}: { moves: Move[] } = $props();
 
@@ -21,7 +22,7 @@
 
 <section class="flex flex-col gap-4">
     <div class="flex gap-2 justify-between items-center">
-        <h2 class="grow font-bold text-xl">
+        <h2 class="grow">
             {open
               ? "Select your level"
               : `Level: ${ucFirst($selectedLevel ?? '')}`}
@@ -29,10 +30,13 @@
         {#if !open}
             <div transition:fade={{ duration: 50}}>
                 <Popover.Root>
-                    <Popover.Trigger>
-                        <Button>Moves</Button>
+                    <Popover.Trigger
+                            class={buttonVariants({ variant: "default" })}
+                            aria-label="View Moves">
+                        Moves
                     </Popover.Trigger>
-                    <Popover.Content class="max-h-[75vh] overflow-y-auto border-primary bg-transparent backdrop-blur-lg">
+                    <Popover.Content
+                            class="max-h-[75vh] overflow-y-auto border-primary bg-transparent backdrop-blur-lg">
                         <ul>
                             {#each sortedMoves as move}
                                 <li>{move.name} ({move.level})</li>
@@ -42,7 +46,7 @@
                 </Popover.Root>
             </div>
         {/if}
-        <Button onclick={() => open = !open}>
+        <Button onclick={() => open = !open} aria-label="Toggle Level Selector">
             <Settings/>
         </Button>
     </div>
@@ -52,7 +56,8 @@
                 <div class="flex flex-wrap gap-2">
                     {#each MOVE_LEVELS as level}
                         <Button onclick={() => {selectedLevel.set(level); open = false;}}
-                                variant={$selectedLevel === level ? 'default' : 'ghost'}>
+                                variant={$selectedLevel === level ? 'default' : 'ghost'}
+                                aria-label={`Select Move Level: ${level}`}>
                             {ucFirst(level)}
                         </Button>
                     {/each}

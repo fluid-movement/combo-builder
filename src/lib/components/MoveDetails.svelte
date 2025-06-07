@@ -1,34 +1,34 @@
 <script lang="ts">
   import type {Move} from "$lib/schemas/move";
+  import LazyYouTube from "$lib/components/LazyYouTube.svelte";
+  import {ucFirst} from "$lib/utils";
 
-  let {move}: { move: Move } = $props();
+  interface Props {
+    move: Move;
+    stopPlayback?: boolean;
+  }
 
-  // Process the video URL safely, handling undefined case properly
-  let videoUrl = $derived(move.video
-    ? move.video.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/')
-    : null);
+  let {move, stopPlayback = false}: Props = $props();
 </script>
 
-<section class="text-sm flex flex-col">
+<section aria-label="Move Details" class="text-sm flex flex-col">
     <p>
-        <strong>Level:</strong> {move.level}
+        <strong>Level:</strong> {ucFirst(move.level)}
     </p>
     <p>
-        <strong>Type:</strong> {move.type}
+        <strong>Type:</strong> {move.type.map((item) => ucFirst(item)).join(', ')}
     </p>
-    <p>
-        <strong>Description:</strong> {move.description || 'No description available.'}
-    </p>
-    {#if videoUrl}
-        <div class="mt-2 aspect-video">
-            <iframe
-                    class="w-full h-full"
-                    src={videoUrl}
-                    title="{move.name} video"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen></iframe>
-        </div>
+    {#if move.description}
+        <p>
+            <strong>Description:</strong> {move.description}
+        </p>
+    {/if}
+    {#if move.videoId}
+        <LazyYouTube
+                videoId={move.videoId}
+                title={move.name}
+                class="mt-2"
+                stopPlayback={stopPlayback}
+        />
     {/if}
 </section>
