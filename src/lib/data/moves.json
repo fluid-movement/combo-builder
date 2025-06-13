@@ -1,6 +1,6 @@
 [
   {
-    "id": "under_the_leg",
+    "id": "14a125cf-4ff7-4465-a45a-0f9c159d00cb",
     "name": "Under the leg",
     "type": [
       "catch",
@@ -14,7 +14,7 @@
     "videoId": "8tgEAfZMPfg"
   },
   {
-    "id": "turnover",
+    "id": "4537158e-d4df-4e2b-b82b-a5677051dc9d",
     "name": "Turnover",
     "type": [
       "move"
@@ -23,7 +23,7 @@
     "description": "Turn the disc over"
   },
   {
-    "id": "upside_down",
+    "id": "66ce49a2-2ce7-4b08-a15a-51bfea758071",
     "name": "Upside Down",
     "type": [
       "modifier"
@@ -35,7 +35,7 @@
     ]
   },
   {
-    "id": "chair",
+    "id": "0e27dedf-1d63-4fe5-8798-563a47ea0bb6",
     "name": "Chair",
     "type": [
       "catch",
@@ -45,7 +45,7 @@
     "description": "Squat as if sitting on a chair. Catch or take the disc under your legs."
   },
   {
-    "id": "juice",
+    "id": "e2b551d8-f637-4e6a-846c-eadbd4ceb531",
     "name": "Juice",
     "type": [
       "move"
@@ -54,7 +54,7 @@
     "description": "Against the spin pull"
   },
   {
-    "id": "crank_in",
+    "id": "cd003c1e-d35f-46aa-a549-0d7594ef92e6",
     "name": "Crank in",
     "type": [
       "move"
@@ -63,7 +63,7 @@
     "description": ""
   },
   {
-    "id": "crank_out",
+    "id": "0fed0cca-a91b-454c-9a87-9af8aa3c6370",
     "name": "Crank out",
     "type": [
       "move"
@@ -72,7 +72,7 @@
     "description": ""
   },
   {
-    "id": "triple_fake",
+    "id": "6430c266-a54c-4800-bd5d-36b8bf0c45c3",
     "name": "triple fake",
     "type": [
       "move",
@@ -82,7 +82,7 @@
     "description": ""
   },
   {
-    "id": "phlaud",
+    "id": "5f90fb89-156d-4fa3-8246-5b3922264e3b",
     "name": "Phlaud",
     "type": [
       "move",
@@ -92,7 +92,7 @@
     "description": ""
   },
   {
-    "id": "scarecrow",
+    "id": "bf696c4b-5aad-4cad-b176-1396c05c2c2a",
     "name": "Scarecrow",
     "type": [
       "catch",
@@ -103,7 +103,7 @@
     "videoId": "5UzjRJcEGyQ"
   },
   {
-    "id": "brush",
+    "id": "8d0f78e6-157c-4894-ac29-2da2b0588c89",
     "name": "Brush",
     "type": [
       "move"
@@ -113,7 +113,7 @@
     "videoId": "RxXSCqGofvg"
   },
   {
-    "id": "spinning",
+    "id": "41c11a74-5918-4155-b203-0f998cbeee7b",
     "name": "Spinning",
     "type": [
       "modifier"
@@ -123,7 +123,7 @@
     "videoId": "dphSV2f3b-0"
   },
   {
-    "id": "double_spinning",
+    "id": "133dfb16-f3fd-4580-8569-1d9c57c7217d",
     "name": "Double Spinning",
     "type": [
       "modifier"
@@ -132,7 +132,7 @@
     "description": ""
   },
   {
-    "id": "gitis",
+    "id": "bf06ffe4-d9e2-411a-be0f-f9cc5cffde10",
     "name": "Gitis",
     "type": [
       "catch",
@@ -143,16 +143,17 @@
     "videoId": "0t9UoRti3Ec"
   },
   {
-    "id": "barrel",
+    "id": "078fc831-e64c-48e0-8600-748660642e85",
     "name": "Barrel",
     "type": [
-      "catch"
+      "catch",
+      "modifier"
     ],
     "level": "pro",
     "description": ""
   },
   {
-    "id": "barrel_gitis",
+    "id": "80e139be-0f68-4f79-a48b-8631e668bb5c",
     "name": "Barrel Gitis",
     "type": [
       "catch"
@@ -161,7 +162,7 @@
     "description": ""
   },
   {
-    "id": "lacer",
+    "id": "53ef2ad6-405f-45be-b8e6-b196eb99437e",
     "name": "Lacer",
     "type": [
       "catch",
@@ -175,7 +176,7 @@
     "videoId": "OP5F5hJw16w"
   },
   {
-    "id": "roll",
+    "id": "c8dce4a3-983f-4f02-8752-0dec00809362",
     "name": "Roll",
     "type": [
       "move",
@@ -185,7 +186,7 @@
     "description": ""
   },
   {
-    "id": "backroll",
+    "id": "68814abc-6f6d-46b7-9c7d-2f5663f0f9d2",
     "name": "Backroll",
     "type": [
       "move"
@@ -195,7 +196,7 @@
     "videoId": "A3FVjq45W74"
   },
   {
-    "id": "skid",
+    "id": "2d14a0c6-f91d-436c-a382-eccbf56bb1b8",
     "name": "Skid",
     "type": [
       "move"
@@ -204,7 +205,7 @@
     "description": ""
   },
   {
-    "id": "serpent_charmer",
+    "id": "bca9d7c3-7699-4b78-b9a0-9ee9f6c4872f",
     "name": "Serpent Charmer",
     "type": [
       "move"
@@ -213,7 +214,7 @@
     "description": ""
   },
   {
-    "id": "flamingo",
+    "id": "be3f121a-04db-4d5f-92c8-bd453f9b9f04",
     "name": "Flamingo",
     "type": [
       "catch",
@@ -223,7 +224,7 @@
     "description": ""
   },
   {
-    "id": "flamingitis",
+    "id": "1c926672-e606-483d-9cc4-d133b5aa53ab",
     "name": "Flamingitis",
     "type": [
       "catch",
@@ -233,7 +234,7 @@
     "description": ""
   },
   {
-    "id": "osis",
+    "id": "19857e1f-f2ef-42a9-a2f5-8f953b902701",
     "name": "Osis",
     "type": [
       "modifier"
@@ -242,7 +243,7 @@
     "description": ""
   },
   {
-    "id": "bad_attitude",
+    "id": "3179c248-f39e-4b7f-be72-cf6affaf2c24",
     "name": "Bad Attitude",
     "type": [
       "catch",
@@ -252,7 +253,7 @@
     "description": ""
   },
   {
-    "id": "5050_roll",
+    "id": "2de0e0be-4e62-46fa-9d2f-d1f4a2328d8f",
     "name": "50-50 Roll",
     "type": [
       "catch"
@@ -261,7 +262,7 @@
     "description": ""
   },
   {
-    "id": "figure_four",
+    "id": "a76db3ae-fd0a-4f2d-a486-de03c4b0acf7",
     "name": "Figure Four",
     "type": [
       "catch",
@@ -274,7 +275,7 @@
     ]
   },
   {
-    "id": "behind_the_back",
+    "id": "9c0780cb-4a92-40c0-9d3b-464dc2947be7",
     "name": "Behind the Back",
     "type": [
       "catch",
@@ -288,7 +289,7 @@
     "videoId": "Co3xwv0Q0RA"
   },
   {
-    "id": "cuff",
+    "id": "95b84ac8-96ca-46f4-b030-feaee78c6534",
     "name": "Cuff",
     "type": [
       "move"
@@ -298,7 +299,7 @@
     "videoId": "vM2WsGScvQ4"
   },
   {
-    "id": "eagle_spotter",
+    "id": "3f6bc7f2-e7c0-4673-82cd-c1c69e394cd9",
     "name": "Eagle Spotter",
     "type": [
       "move"
@@ -307,7 +308,7 @@
     "description": ""
   },
   {
-    "id": "kerfuffle",
+    "id": "8e4639cd-88eb-49eb-97e0-feae54f452d9",
     "name": "Kerfuffle",
     "type": [
       "catch"
@@ -316,7 +317,7 @@
     "description": ""
   },
   {
-    "id": "double_trouble",
+    "id": "48726da4-9492-4b86-9b46-231b5ca20fcf",
     "name": "Double Trouble",
     "type": [
       "move"
@@ -325,16 +326,20 @@
     "description": ""
   },
   {
-    "id": "wipers",
+    "id": "14aa10e4-489e-4387-8f2f-a224fc177c5e",
     "name": "Wipers",
     "type": [
       "move"
     ],
     "level": "advanced",
-    "description": ""
+    "description": "",
+    "alternateNames": [
+      "Marrons"
+    ],
+    "videoId": "Tcf_qIEHUpI"
   },
   {
-    "id": "kick",
+    "id": "7083eacd-ed00-4235-8686-bbfd2e923397",
     "name": "Kick",
     "type": [
       "move"
@@ -343,16 +348,17 @@
     "description": ""
   },
   {
-    "id": "olivia",
+    "id": "5de61cde-156c-4494-91af-c9f570ad08e2",
     "name": "Olivia",
     "type": [
       "catch"
     ],
     "level": "advanced",
-    "description": ""
+    "description": "",
+    "videoId": "mTiAwjCKNUI"
   },
   {
-    "id": "oliver",
+    "id": "5a17f5d0-fccf-487f-9b8a-366c6302a0e5",
     "name": "Oliver",
     "type": [
       "catch"
@@ -361,7 +367,7 @@
     "description": ""
   },
   {
-    "id": "amphibian",
+    "id": "76e852af-ddb6-4e61-abd0-03b71f11ae74",
     "name": "Amphibian",
     "type": [
       "move"
@@ -370,7 +376,7 @@
     "description": ""
   },
   {
-    "id": "twirl",
+    "id": "0f38a879-155b-4a21-bb64-c50f45664dae",
     "name": "Twirl",
     "type": [
       "move",
@@ -378,5 +384,134 @@
     ],
     "level": "beginner",
     "description": ""
+  },
+  {
+    "id": "6ac9fa08-fdaa-40c8-8429-8ac9421f68e2",
+    "name": "Double legover",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "86f2b34d-aaa8-4b15-b078-2a850a0d8355",
+    "name": "Restricted brush",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": "Any restricted brush, e.g., UTL, BTB..."
+  },
+  {
+    "id": "eeeae3ee-7db0-4b40-8937-8bb3c22b8e68",
+    "name": "Tip",
+    "type": [
+      "move"
+    ],
+    "level": "beginner",
+    "description": "A tip into the center of the disc"
+  },
+  {
+    "id": "50eb2243-6882-43c5-835f-f6b088072879",
+    "name": "Tip",
+    "type": [
+      "modifier"
+    ],
+    "level": "advanced",
+    "description": ""
+  },
+  {
+    "id": "8003bcac-f0af-4adf-aacb-bb8d23d22148",
+    "name": "Cuff over",
+    "type": [
+      "move"
+    ],
+    "level": "pro",
+    "description": "Turn the disc over with a cuff "
+  },
+  {
+    "id": "37b7e8a0-198a-4a8e-b172-134d6b74ec53",
+    "name": "Inverted",
+    "type": [
+      "modifier"
+    ],
+    "level": "pro",
+    "description": "Inverted hand position "
+  },
+  {
+    "id": "fe3b83db-8e6f-4fe4-8e71-70721b047ac1",
+    "name": "Donkey kick ",
+    "type": [
+      "move"
+    ],
+    "level": "specialist",
+    "description": "Kick the rim of the disc with the side of your foot",
+    "videoId": "hvXS6FiBZIA"
+  },
+  {
+    "id": "72178738-3963-48ca-9d58-cabc6968e792",
+    "name": "Elbow tip",
+    "type": [
+      "move"
+    ],
+    "level": "advanced",
+    "description": "",
+    "videoId": "eqz65lEwGB4"
+  },
+  {
+    "id": "48e0d704-0210-4e87-98b0-bc4cb3966ff9",
+    "name": "Yogi",
+    "type": [
+      "move"
+    ],
+    "level": "pro",
+    "description": "",
+    "videoId": "4vAPWT7wQWU"
+  },
+  {
+    "id": "92a2b046-56b5-48cd-9da4-31bae8ea2c92",
+    "name": "Piccolo",
+    "type": [
+      "catch"
+    ],
+    "level": "beginner",
+    "description": "2 hand catch over the shoulder"
+  },
+  {
+    "id": "c152c67c-a953-4449-b486-4e28dd4b7716",
+    "name": "Switch",
+    "type": [
+      "modifier"
+    ],
+    "level": "specialist",
+    "description": "Jump, then switch legs in air before the move"
+  },
+  {
+    "id": "2d179bf8-9c1c-4989-accb-194789d18835",
+    "name": "Guide",
+    "type": [
+      "move"
+    ],
+    "level": "beginner",
+    "description": "Gently touch disc on outer edge when it is spinning to guide the disc"
+  },
+  {
+    "id": "2e0ba6f6-a96e-43e3-b703-47743ba6bac5",
+    "name": "Gutter",
+    "type": [
+      "catch"
+    ],
+    "level": "specialist",
+    "description": "Lying on the ground, legs together. Disc rolls from toes to hand"
+  },
+  {
+    "id": "b0e88aa4-dc50-4955-9db4-80717ca8e863",
+    "name": "HOV Lane",
+    "type": [
+      "move"
+    ],
+    "level": "specialist",
+    "description": "Lying on the ground, legs together. Disc is thrown down legs, feet act as a ramp"
   }
 ]
