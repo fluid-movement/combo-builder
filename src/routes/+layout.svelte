@@ -19,11 +19,11 @@
   let open = $state(false);
 </script>
 
-<header class="flex justify-between py-4">
-    <h1>{pageTitle}</h1>
+<header class="flex justify-between py-4 px-4">
+    <h1 class="text-primary-foreground">{pageTitle}</h1>
     <Sheet.Root bind:open>
         <Sheet.Trigger>
-            <Menu aria-label="Navigation Sidebar"/>
+            <Menu aria-label="Navigation Sidebar" class="text-primary-foreground"/>
         </Sheet.Trigger>
         <Sheet.Content side="left" class="backdrop-blur-sm">
             <Sheet.Header>

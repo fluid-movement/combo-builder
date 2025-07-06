@@ -4,7 +4,7 @@
   import {MOVE_LEVELS} from '$lib/schemas/move';
   import {ucFirst} from "$lib/utils";
   import {slide, fade} from "svelte/transition";
-  import {Settings} from "@lucide/svelte";
+  import {Settings, BookOpen} from "@lucide/svelte";
   import * as Popover from "$lib/components/ui/popover";
   import type {Move} from "$lib/schemas/move";
   import {buttonVariants} from "$lib/components/ui/button";
@@ -20,19 +20,21 @@
   let open = $state(false);
 </script>
 
-<section class="flex flex-col gap-4">
-    <div class="flex gap-2 justify-between items-center">
-        <h2 class="grow">
-            {open
-              ? "Select your level"
-              : `Level: ${ucFirst($selectedLevel ?? '')}`}
-        </h2>
+<section class="flex flex-col gap-4 border border-accent p-2 rounded">
+    <div class="flex gap-2 justify-between ">
+        <button class="grow font-bold text-left"
+                onclick={() => open = !open}
+        >
+            {open ? "Select your level" : `Level: ${ucFirst($selectedLevel ?? '')}`}
+        </button>
+
         {#if !open}
             <div transition:fade={{ duration: 50}}>
                 <Popover.Root>
                     <Popover.Trigger
-                            class={buttonVariants({ variant: "default" })}
+                            class={buttonVariants({ variant: "ghost" })}
                             aria-label="View Moves">
+                        <BookOpen />
                         Moves
                     </Popover.Trigger>
                     <Popover.Content
@@ -46,7 +48,11 @@
                 </Popover.Root>
             </div>
         {/if}
-        <Button onclick={() => open = !open} aria-label="Toggle Level Selector">
+        <Button
+                variant="icon"
+                size="icon"
+                onclick={() => open = !open}
+                aria-label="Toggle Level Selector">
             <Settings/>
         </Button>
     </div>

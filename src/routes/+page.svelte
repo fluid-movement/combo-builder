@@ -23,16 +23,20 @@
 
 <main class="flex flex-col gap-8">
     <LevelSelector moves={filteredMoves}/>
-    <section class="flex flex-col gap-4">
+    <section class="flex flex-col gap-4 px-2">
         <div class="flex justify-between items-center">
             <h2 class="font-bold">
                 {#if picker.isFresh()}Add a catch{:else}Add a move or modifier{/if}
             </h2>
-            <Button onclick={() => picker.reset()} disabled={picker.isFresh()} aria-label="Reset Picker">
+            <Button
+                    variant="icon"
+                    size="icon"
+                    onclick={() => picker.reset()} disabled={picker.isFresh()}
+                    aria-label="Reset Picker">
                 <RotateCcw/>
             </Button>
         </div>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap justify-between">
             <Button onclick={() => picker.pickCatch()}
                     disabled={!picker.isFresh()}
                     variant={picker.isFresh() && picker.hasAvailable('catch') ? 'default' : 'ghost'}
@@ -55,12 +59,10 @@
                 Modifier
             </Button>
         </div>
-        <div class="flex flex-col gap-2">
-            {#each picker.list as pickedMove}
-                <div transition:slide={{ duration: 100}}>
-                    <MoveCard {pickedMove}/>
-                </div>
-            {/each}
-        </div>
+        {#each picker.list as pickedMove}
+            <div transition:slide={{ duration: 100}}>
+                <MoveCard {pickedMove}/>
+            </div>
+        {/each}
     </section>
 </main>
