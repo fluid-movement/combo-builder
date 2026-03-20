@@ -3,14 +3,23 @@
     videoId: string;
     title: string;
     class?: string;
+    stopPlayback?: boolean;
   }
 
-  let {videoId, title, class: className = ''}: Props = $props();
+  let {videoId, title, class: className = '', stopPlayback = false}: Props = $props();
 
-  let isActivated = $state(false);
+  let userActivated = $state(false);
+
+  $effect(() => {
+    if (stopPlayback) {
+      userActivated = false;
+    }
+  });
+
+  const isActivated = $derived(userActivated && !stopPlayback);
 
   const activateVideo = () => {
-    isActivated = true;
+    userActivated = true;
   };
 
   const handleKeyPress = (event: KeyboardEvent) => {
