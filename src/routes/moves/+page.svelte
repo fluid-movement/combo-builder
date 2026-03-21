@@ -2,10 +2,9 @@
   import type { Move } from "$lib/schemas/move";
   import { selectedLevel } from "$lib/stores/levelStore";
   import * as Accordion from "$lib/components/ui/accordion";
-  import Button from "$lib/components/Button.svelte";
   import MoveDetails from "$lib/components/MoveDetails.svelte";
-  import { MOVE_LEVELS } from "$lib/schemas/move";
   import Logo from "$lib/components/Logo.svelte";
+  import DifficultySelector from "$lib/components/DifficultySelector.svelte";
 
   let { data } = $props();
   let moves = $derived(data.moves);
@@ -31,22 +30,7 @@
 
 <Logo size="sm" />
 <h1 class="text-3xl font-bold mb-4 mt-4 text-center">The Move Archive</h1>
-{#if $selectedLevel}
-  <div class="grid grid-cols-2 gap-2">
-    {#each MOVE_LEVELS as level}
-      <Button
-        class="capitalize"
-        aria-pressed={$selectedLevel === level}
-        aria-label={`Select ${level} moves`}
-        onclick={() => {
-          selectedLevel.set(level);
-        }}
-      >
-        {level}
-      </Button>
-    {/each}
-  </div>
-{/if}
+<DifficultySelector />
 <ul class="flex flex-col gap-4">
   <Accordion.Root type="single" class="w-full" bind:value={openItem}>
     {#each filteredMoves as move (move.id)}

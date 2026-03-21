@@ -69,16 +69,16 @@
 }
 
 :root[data-nav-direction="forward"]::view-transition-old(main-content) {
-  animation: slide-out-to-left var(--anim-nav-duration) var(--anim-nav-easing);
+  animation: slide-out-to-left var(--anim-nav-duration) var(--anim-nav-easing) forwards;
 }
 :root[data-nav-direction="forward"]::view-transition-new(main-content) {
-  animation: slide-in-from-right var(--anim-nav-duration) var(--anim-nav-easing);
+  animation: slide-in-from-right var(--anim-nav-duration) var(--anim-nav-easing) forwards;
 }
 :root[data-nav-direction="back"]::view-transition-old(main-content) {
-  animation: slide-out-to-right var(--anim-nav-duration) var(--anim-nav-easing);
+  animation: slide-out-to-right var(--anim-nav-duration) var(--anim-nav-easing) forwards;
 }
 :root[data-nav-direction="back"]::view-transition-new(main-content) {
-  animation: slide-in-from-left var(--anim-nav-duration) var(--anim-nav-easing);
+  animation: slide-in-from-left var(--anim-nav-duration) var(--anim-nav-easing) forwards;
 }
 
 [data-slot="card-button"] {
