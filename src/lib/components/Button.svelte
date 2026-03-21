@@ -4,11 +4,13 @@
   import { type VariantProps, tv } from "tailwind-variants";
 
   export const ButtonVariants = tv({
-    base: "flex rounded-xl text-lg font-semibold justify-center items-center bg-button text-button-foreground border-4 px-4 py-2 active:scale-95 active:brightness-95 transition-transform aria-pressed:bg-primary aria-pressed:text-primary-foreground disabled:opacity-50 disabled:pointer-events-none",
+    base: "flex rounded-xl text-lg font-semibold justify-center items-center bg-button text-button-foreground border-4 px-4 py-2 touch-manipulation aria-pressed:bg-primary aria-pressed:text-primary-foreground disabled:opacity-50 disabled:pointer-events-none",
     variants: {
       variant: {
         dashed: "p-1",
         solid: "",
+        primary: "bg-primary text-primary-foreground border-primary",
+        ghost: "bg-transparent border-transparent text-muted",
       },
     },
     defaultVariants: {

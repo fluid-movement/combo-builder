@@ -10,12 +10,14 @@
   --card-foreground: oklch(0.3353 0.0132 2.7676);
   --primary: oklch(0.7357 0.1641 34.7091);
   --primary-foreground: oklch(1 0 0);
-  --muted-foreground: oklch(0.5534 0.0116 58.0708);
-  --destructive: oklch(0.6122 0.2082 22.241);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.7357 0.1641 34.7091);
-  --ring: oklch(0.7357 0.1641 34.7091);
+  --muted: oklch(0.5534 0.0116 58.0708);
   --font-sans: "Nunito", sans-serif;
+
+  /* Animation */
+  --anim-nav-duration: 300ms;
+  --anim-nav-easing: cubic-bezier(0.33, 0, 0.66, 1);
+  --anim-press-duration: 75ms;
+  --anim-press-scale: 0.97;
 }
 
 @theme inline {
@@ -26,13 +28,64 @@
   --color-card-foreground: var(--card-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-ring: var(--ring);
+  --color-muted: var(--muted);
+  --color-border: var(--primary);
+  --color-ring: var(--primary);
 
   --font-sans: var(--font-sans);
+}
+
+.move-card-enter {
+  transform: translateX(0);
+  transition: transform var(--anim-nav-duration) var(--anim-nav-easing);
+}
+
+@starting-style {
+  .move-card-enter {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-in-from-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes slide-out-to-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+@keyframes slide-in-from-left {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes slide-out-to-right {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+:root[data-nav-direction="forward"]::view-transition-old(main-content) {
+  animation: slide-out-to-left var(--anim-nav-duration) var(--anim-nav-easing);
+}
+:root[data-nav-direction="forward"]::view-transition-new(main-content) {
+  animation: slide-in-from-right var(--anim-nav-duration) var(--anim-nav-easing);
+}
+:root[data-nav-direction="back"]::view-transition-old(main-content) {
+  animation: slide-out-to-right var(--anim-nav-duration) var(--anim-nav-easing);
+}
+:root[data-nav-direction="back"]::view-transition-new(main-content) {
+  animation: slide-in-from-left var(--anim-nav-duration) var(--anim-nav-easing);
+}
+
+[data-slot="card-button"] {
+  transition: transform var(--anim-press-duration);
+}
+[data-slot="card-button"]:active {
+  transform: scale(var(--anim-press-scale));
 }
 
 @layer base {
@@ -43,7 +96,11 @@
   }
 
   body {
-    @apply bg-background min-h-screen max-w-3xl mx-auto sm:px-6 lg:px-8 text-foreground;
+    @apply bg-background h-dvh overflow-hidden max-w-3xl mx-auto sm:px-6 lg:px-8 text-foreground;
+  }
+
+  main {
+    scroll-padding-bottom: 10rem;
   }
 
   h1,
