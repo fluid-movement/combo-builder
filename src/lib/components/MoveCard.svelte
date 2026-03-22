@@ -9,7 +9,7 @@
   let expanded = $state(false);
 </script>
 
-<div class="rounded-xl border-4 border-primary bg-button overflow-hidden">
+<div class="rounded-xl border-4 border-primary bg-card overflow-hidden">
   <button
     class="w-full flex items-center gap-3 px-4 py-3 text-left"
     onclick={() => (expanded = !expanded)}

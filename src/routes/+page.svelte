@@ -2,12 +2,11 @@
   import { MovePicker } from "$lib/utils/move-picker.svelte.js";
   import Button from "$lib/components/Button.svelte";
   import { selectedLevel } from "$lib/stores/levelStore";
-  import { MOVE_LEVELS, type Move } from "$lib/schemas/move";
   import { getMovesForLevel } from "$lib/utils/move-filter";
   import MoveCard from "$lib/components/MoveCard.svelte";
   import Logo from "$lib/components/Logo.svelte";
-  import { RotateCcw, Plus, Check } from "$icons";
-  import { cn } from "$lib/utils.js";
+  import DifficultySelector from "$lib/components/DifficultySelector.svelte";
+  import { RotateCcw, Plus } from "$icons";
   import { gameStarted } from "$lib/stores/gameStore";
 
   let { data } = $props();
@@ -65,30 +64,18 @@
       <!-- Menu -->
       <div class="flex flex-col gap-3 bg-button/50 rounded-2xl p-4">
         <Button
-          class="text-xl"
+          class="text-3xl"
           onclick={() => transitionWith("forward", () => picker.pickCatch())}
-          variant="dashed"><Plus />Tap to start your combo</Button
+          variant="dashed"
         >
+          <Plus />Tap to start your combo
+        </Button>
         <div class="flex flex-col gap-2">
           <span
             class="text-xs font-semibold uppercase tracking-widest text-center opacity-50"
             >Difficulty</span
           >
-          <div class="grid grid-cols-2 gap-2">
-            {#each MOVE_LEVELS as level (level)}
-              <Button
-                class="capitalize gap-1.5"
-                aria-pressed={$selectedLevel === level}
-                aria-label={`Select ${level} moves`}
-                onclick={() => selectedLevel.set(level)}
-              >
-                {#if $selectedLevel === level}
-                  <Check size="16" strokeWidth={3} />
-                {/if}
-                {level}
-              </Button>
-            {/each}
-          </div>
+          <DifficultySelector />
         </div>
       </div>
     </div>
@@ -117,7 +104,7 @@
         disabled={!picker.hasAvailable("move")}
         aria-label="Pick Move"
         variant="primary"
-        class="flex-1 py-4"
+        class="flex-1 py-4 text-primary-background"
       >
         <Plus /> Move
       </Button>

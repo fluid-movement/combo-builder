@@ -4,12 +4,11 @@
 
 :root {
   --background: oklch(0.915 0.0988 95.31);
-  --foreground: oklch(0.4 0.044 240.6);
-  --button: oklch(0.95 0.1341 34.7091);
-  --card: oklch(0.95 0.07 95.31);
-  --card-foreground: oklch(0.3353 0.0132 2.7676);
-  --primary: oklch(0.7357 0.1641 34.7091);
-  --primary-foreground: oklch(1 0 0);
+  --foreground: oklch(0.21 0.15 142);
+  --button: oklch(0.977 0.08 120);
+  --card: oklch(0.977 0.08 120);
+  --primary: oklch(0.645 0.143 142);
+  --primary-background: oklch(0.977 0.08 120);
   --muted: oklch(0.5534 0.0116 58.0708);
   --font-sans: "Nunito", sans-serif;
 
@@ -25,10 +24,8 @@
   --color-foreground: var(--foreground);
   --color-button: var(--button);
   --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-muted: var(--muted);
+  --color-primary-background: var(--primary-background);
   --color-border: var(--primary);
   --color-ring: var(--primary);
 
@@ -47,20 +44,36 @@
 }
 
 @keyframes slide-in-from-right {
-  from { transform: translateX(100%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 @keyframes slide-out-to-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 @keyframes slide-in-from-left {
-  from { transform: translateX(-100%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 @keyframes slide-out-to-right {
-  from { transform: translateX(0); }
-  to   { transform: translateX(100%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
 
 ::view-transition-old(root),
@@ -69,16 +82,20 @@
 }
 
 :root[data-nav-direction="forward"]::view-transition-old(main-content) {
-  animation: slide-out-to-left var(--anim-nav-duration) var(--anim-nav-easing) forwards;
+  animation: slide-out-to-left var(--anim-nav-duration) var(--anim-nav-easing)
+    forwards;
 }
 :root[data-nav-direction="forward"]::view-transition-new(main-content) {
-  animation: slide-in-from-right var(--anim-nav-duration) var(--anim-nav-easing) forwards;
+  animation: slide-in-from-right var(--anim-nav-duration) var(--anim-nav-easing)
+    forwards;
 }
 :root[data-nav-direction="back"]::view-transition-old(main-content) {
-  animation: slide-out-to-right var(--anim-nav-duration) var(--anim-nav-easing) forwards;
+  animation: slide-out-to-right var(--anim-nav-duration) var(--anim-nav-easing)
+    forwards;
 }
 :root[data-nav-direction="back"]::view-transition-new(main-content) {
-  animation: slide-in-from-left var(--anim-nav-duration) var(--anim-nav-easing) forwards;
+  animation: slide-in-from-left var(--anim-nav-duration) var(--anim-nav-easing)
+    forwards;
 }
 
 [data-slot="card-button"] {
@@ -135,6 +152,6 @@
   }
 
   p a {
-    @apply text-primary underline;
+    @apply underline;
   }
 }

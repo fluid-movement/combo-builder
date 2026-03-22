@@ -46,7 +46,7 @@
     <a
       data-sveltekit-preload-data="hover"
       href="/"
-      class="flex-1 flex flex-col items-center gap-1 py-3 px-2 font-semibold text-xs rounded-xl {page.url.pathname === '/' ? 'bg-primary text-primary-foreground' : 'bg-button'}"
+      class="flex-1 flex flex-col items-center gap-1 py-3 px-2 font-semibold text-xs rounded-xl {page.url.pathname === '/' ? 'bg-primary text-primary-background' : 'bg-button'}"
     >
       <Dices size="22" />
       <span>Combo Builder</span>
@@ -54,7 +54,7 @@
     <a
       data-sveltekit-preload-data="hover"
       href="/moves"
-      class="flex-1 flex flex-col items-center gap-1 py-3 px-2 font-semibold text-xs rounded-xl {page.url.pathname.startsWith('/moves') ? 'bg-primary text-primary-foreground' : 'bg-button'}"
+      class="flex-1 flex flex-col items-center gap-1 py-3 px-2 font-semibold text-xs rounded-xl {page.url.pathname.startsWith('/moves') ? 'bg-primary text-primary-background' : 'bg-button'}"
     >
       <Landmark size="22" />
       <span>Moves</span>
@@ -62,7 +62,7 @@
     <a
       data-sveltekit-preload-data="hover"
       href="/how-to-play"
-      class="flex-1 flex flex-col items-center gap-1 py-3 px-2 font-semibold text-xs rounded-xl {page.url.pathname.startsWith('/how-to-play') ? 'bg-primary text-primary-foreground' : 'bg-button'}"
+      class="flex-1 flex flex-col items-center gap-1 py-3 px-2 font-semibold text-xs rounded-xl {page.url.pathname.startsWith('/how-to-play') ? 'bg-primary text-primary-background' : 'bg-button'}"
     >
       <MessageCircleQuestion size="22" />
       <span>How to play</span>

@@ -31,7 +31,7 @@
   <p>
     To start playing, select your move difficulty level. Each level has a pool
     of moves that will be used to randomly create the combo. The Moves can be
-    seen in the <a href="/moves">Move Archive</a> section.
+    seen in the <a href="/moves">Moves</a> section.
   </p>
   <p>Selecting a catch. Then do the catch!</p>
   <p>

@@ -30,7 +30,12 @@
 
 <Logo size="sm" />
 <h1 class="text-3xl font-bold mb-4 mt-4 text-center">The Move Archive</h1>
-<DifficultySelector />
+<div class="flex flex-col gap-2 bg-button/50 rounded-2xl p-4">
+  <span class="text-xs font-semibold uppercase tracking-widest text-center opacity-50">
+    Difficulty
+  </span>
+  <DifficultySelector />
+</div>
 <ul class="flex flex-col gap-4">
   <Accordion.Root type="single" class="w-full" bind:value={openItem}>
     {#each filteredMoves as move (move.id)}
