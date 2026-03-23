@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { RotateCcw } from "$icons";
+  import { Plus, RotateCcw } from "$icons";
   import Logo from "$lib/components/Logo.svelte";
+  import type { Component } from "svelte";
 </script>
 
 <svelte:head>
@@ -11,8 +12,8 @@
   />
 </svelte:head>
 
-{#snippet fakeButton(contents: string)}
-  <span class="border rounded-md px-2 inline-block">{contents}</span>
+{#snippet fakeButton(Icon: Component, contents: string)}
+  <span class="border rounded-md px-2 inline-flex items-center gap-1"><Icon size="12" />{contents}</span>
 {/snippet}
 
 <Logo size="sm" />
@@ -27,24 +28,27 @@
     Whether you're a beginner or an experienced player, this game will get your
     creative juices flowing and help you improve your game.
   </p>
-  <h2>Getting Started</h2>
+  <h2>Select your difficulty</h2>
   <p>
-    To start playing, select your move difficulty level. Each level has a pool
-    of moves that will be used to randomly create the combo. The Moves can be
+    To start playing, select your move difficulty level. Each level has a list
+    of moves that will be used to randomly create the combo. Your pool of moves
+    will be your selected difficulty, and all below, so for example selecting
+    "Advanced", will give you all advanced and beginner moves. The moves can be
     seen in the <a href="/moves">Moves</a> section.
   </p>
-  <p>Selecting a catch. Then do the catch!</p>
+  <h2>Start the game</h2>
   <p>
-    Now you can add moves or modifiers to your combo by clicking the {@render fakeButton(
-      "+ Move",
-    )} or {@render fakeButton("+ Modifier")} buttons. Whenever you add a move or modifier,
-    think of a way to connect everything, and then do the combo!<br />
-    Strive to be as consecutive as possible!
+    Press {@render fakeButton(Plus, "Tap to start your combo")} then do the catch!
+  </p>
+  <p>
+    Now you can add moves or modifiers to your combo by clicking the {@render fakeButton(Plus,
+      "Move",
+    )} or {@render fakeButton(Plus, "Modifier")} buttons. Whenever you add a move or modifier,
+    think of a way to connect everything, and then do the combo! Strive to be as consecutive as possible!
   </p>
   <p class="flex items-center gap-2">
-    To restart, press the <span class="border rounded-md p-2 inline-block"
-      ><RotateCcw size="18" /></span
-    > button.
+    
+    To restart, press {@render fakeButton(RotateCcw, "Reset")}
   </p>
   <h2>Moves and Modifiers</h2>
   <p>

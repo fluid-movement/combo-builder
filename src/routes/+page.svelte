@@ -121,8 +121,7 @@
       <Button
         onclick={() => transitionWith("back", () => picker.reset())}
         aria-label="Reset Picker"
-        variant="ghost"
-        class="text-sm px-8"
+        class="text-sm px-12"
       >
         <RotateCcw size="14" /> Reset
       </Button>
