@@ -1,3 +1,5 @@
+@import "@fontsource-variable/nunito";
+@import "@fontsource-variable/nunito/wght-italic.css";
 @import "tailwindcss";
 
 @import "tw-animate-css";
@@ -10,7 +12,7 @@
   --primary: oklch(0.645 0.143 142);
   --primary-background: oklch(0.977 0.08 120);
   --muted: oklch(0.5534 0.0116 58.0708);
-  --font-sans: "Nunito", sans-serif;
+  --font-sans: "Nunito Variable", sans-serif;
 
   /* Animation */
   --anim-nav-duration: 300ms;
