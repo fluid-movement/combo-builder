@@ -5,8 +5,17 @@
   import type { LayoutProps } from "./$types";
   import { Dices, Landmark, MessageCircleQuestion } from "$icons";
   import { gameStarted } from "$lib/stores/gameStore";
+  import { onMount } from "svelte";
+  import { pwaInfo } from "virtual:pwa-info";
 
   let { children }: LayoutProps = $props();
+
+  const webManifestLink = $derived(pwaInfo ? pwaInfo.webManifest.linkTag : "");
+
+  onMount(async () => {
+    const { registerSW } = await import("virtual:pwa-register");
+    registerSW({ immediate: true });
+  });
 
   const routeOrder: Record<string, number> = {
     "/": 0,
@@ -35,6 +44,10 @@
     page.url.pathname !== "/" || !$gameStarted
   );
 </script>
+
+<svelte:head>
+  {@html webManifestLink}
+</svelte:head>
 
 <div class="flex flex-col h-full">
 <main style="view-transition-name: main-content;" class="p-4 flex-1 overflow-y-auto">
